@@ -7,12 +7,14 @@ pipeline {
     agent any
 
     stages {
-
-        stage ('build prodject')
+        stage('build prodject')
         {
-            sh "mvn --version"
-            sh "java --version"
-            sh "mvn clean package -DskipTests"
+            steps{
+             sh "mvn --version"
+             sh "java --version"
+             sh "mvn clean package -DskipTests"
+            }
+
         }
 
         stage('Packaging/Pushing imagae') {
