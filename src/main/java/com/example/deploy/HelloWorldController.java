@@ -11,4 +11,10 @@ public class HelloWorldController
     {
         return "Hello deploy lan 1";
     }
+
+    @RequestMapping("/phat")
+    public String hello1()
+    {
+        return "Hello deploy lan 2";
+    }
 }
