@@ -7,7 +7,7 @@ pipeline {
     agent any
 
     stages {
-        stage('build prodject')
+        stage('build project')
         {
             steps{
              sh "mvn --version"
@@ -17,7 +17,7 @@ pipeline {
 
         }
 
-        stage('Packaging/Pushing imagae') {
+        stage('Packaging/Pushing image') {
             steps{
                 sh 'docker build -t edward/springboot .'
             }
@@ -30,7 +30,7 @@ pipeline {
             steps {
                 echo 'Deploying and cleaning'
 
-                sh 'docker container stop khalid-springboot || echo "this container does not exist" '
+                sh 'docker container stop edward-springboot || echo "this container does not exist" '
                 sh 'docker network create dev || echo "this network exists"'
                 sh 'echo y | docker container prune '
 
