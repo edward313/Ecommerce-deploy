@@ -11,7 +11,7 @@
 
 
 FROM openjdk:11
-COPY --from=build /target/deploy-0.0.1-SNAPSHOT.jar deploy.jar
+COPY ./target/deploy-0.0.1-SNAPSHOT.jar deploy.jar
 # ENV PORT=8080
 EXPOSE 8082
 ENTRYPOINT ["java","-jar","deploy.jar"]
