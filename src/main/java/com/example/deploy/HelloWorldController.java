@@ -9,6 +9,6 @@ public class HelloWorldController
     @RequestMapping("/")
     public String hello()
     {
-        return "Hello deploy";
+        return "Hello deploy lan 1";
     }
 }
