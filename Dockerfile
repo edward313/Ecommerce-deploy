@@ -20,7 +20,7 @@ FROM openjdk:11
 
 VOLUME /tmp
 #WORKDIR /opt
-COPY ./deploy-0.0.1-SNAPSHOT app.jar
+COPY --from=build /target/api-0.0.1-SNAPSHOT.jar app.jar
 #COPY ./config.properties config.properties
 
 ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
